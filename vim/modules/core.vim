@@ -19,9 +19,6 @@ set number
 set splitbelow
 set splitright
 
-" Set a default indent, but vim-sleuth should adjust it.
-set tabstop=2 shiftwidth=2 expandtab
-
 " Enable mouse. Great for resizing windows and keeping co-workers sane.
 set mouse=a
 
@@ -39,3 +36,9 @@ set sessionoptions=blank,curdir,folds,help,tabpages,winsize
 
 " Enable Tree Style Layout for netrw
 let g:netrw_liststyle=3
+
+" Set a default indent, but vim-sleuth should adjust it.
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
