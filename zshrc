@@ -12,6 +12,16 @@ BULLETTRAIN_TIME_SHOW=false
 BULLETTRAIN_DIR_FG='black'
 BULLETTRAIN_GIT_BG='250'
 
+prompt_hostname() {
+  prompt_segment black grey "$(sh -c 'echo $HOSTNAME')"
+}
+
+BULLETTRAIN_PROMPT_ORDER=(
+  hostname
+  dir
+  git
+  context
+)
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
