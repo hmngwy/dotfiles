@@ -14,7 +14,7 @@ BULLETTRAIN_DIR_FG='black'
 BULLETTRAIN_GIT_BG='250'
 
 prompt_hostname() {
-  prompt_segment black grey "$(hostname)"
+  prompt_segment black grey "$(hostname -s)"
 }
 
 BULLETTRAIN_PROMPT_ORDER=(
