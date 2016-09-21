@@ -1,3 +1,6 @@
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
 cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
 publish () {
   mv $1 "$(date +%Y-%m-%d) $1"
