@@ -20,6 +20,7 @@ prompt_hostname() {
 BULLETTRAIN_PROMPT_ORDER=(
   hostname
   dir
+  virtualenv
   git
   context
 )
@@ -69,7 +70,7 @@ ZSH_TMUX_AUTOQUIT=false
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux git zsh-syntax-highlighting)
+plugins=(virtualenv tmux git zsh-syntax-highlighting)
 
 # User configuration
 
@@ -104,3 +105,5 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH"
 export PIP_REQUIRE_VIRTUALENV=true
+export WORKON_HOME=~/Virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
