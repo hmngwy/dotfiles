@@ -57,4 +57,4 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 	)
 fi
 
-source ~/.tmux-powerline-local.sh
+source ~/.dotfiles_local/tmux-powerline.sh
