@@ -7,7 +7,7 @@ call plug#begin()
 
 " Load plugin list for vim-plug to manage.
 execute 'source' Dot('plugins.vim')
-execute 'source' '~/.plugins.local.vim'
+execute 'source' '~/.dotfiles_local/plugins.vim'
 
 " Lock in the plugin list.
 call plug#end()
