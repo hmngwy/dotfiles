@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-source ~/.env
+source ~/.dotfiles_local/env
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -103,7 +103,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.zsh_aliases
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:$PATH"
-export PIP_REQUIRE_VIRTUALENV=true
-export WORKON_HOME=~/Virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+source ~/.dotfiles_local/zshrc
