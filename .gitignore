@@ -1,3 +1,4 @@
 vim/plugged
 .netrwhist
 tmux/plugins/tmux-*
+oh-my-zsh
