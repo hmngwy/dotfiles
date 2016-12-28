@@ -15,7 +15,11 @@
     ~/.tmux.conf: tmux.conf
     ~/.tmux-powerlinerc: tmux-powerlinerc
     ~/.tmux: tmux
+    ~/.irssi: irssi
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - mkdir ~/.dotfiles_local
+  - touch ~/.dotfiles_local/irssi_config
+  - ln -s ~/.dotfiles_local/irssi_config ~/.irssi/config
+
