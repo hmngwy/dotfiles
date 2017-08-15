@@ -105,3 +105,6 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
 export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 source ~/.dotfiles_local/zshrc
+
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
