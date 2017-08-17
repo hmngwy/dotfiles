@@ -12,6 +12,7 @@ ZSH_THEME="bullet-train/bullet-train"
 BULLETTRAIN_TIME_SHOW=false
 BULLETTRAIN_DIR_FG='black'
 BULLETTRAIN_GIT_BG='250'
+BULLETTRAIN_DIR_EXTENDED=0
 
 prompt_hostname() {
   prompt_segment black grey "$(hostname -s)"
