@@ -3,3 +3,5 @@ vim/plugged
 tmux/plugins/tmux-*
 oh-my-zsh
 irssi/config
+irssi/away.log
+vim/undo

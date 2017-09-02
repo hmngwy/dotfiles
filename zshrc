@@ -67,11 +67,16 @@ COMPLETION_WAITING_DOTS="true"
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
 
+# ZSH VI Mode Config
+export KEYTIMEOUT=1
+MODE_INDICATOR="%{$fg_bold[red]%}%{$fg[red]%}[NORMAL]%{$reset_color%}"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(virtualenv tmux git zsh-syntax-highlighting)
+
 
 # User configuration
 
@@ -109,3 +114,9 @@ source ~/.dotfiles_local/zshrc
 
 export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
+
+export LC_ALL=en_US.UTF-8
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PIP_REQUIRE_VIRTUALENV=true
