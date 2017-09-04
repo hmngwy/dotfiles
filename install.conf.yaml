@@ -5,15 +5,15 @@
 - clean: ['~']
 
 - link:
+    ~/.irssi: irssi
+    ~/.oh-my-zsh: zsh/oh-my-zsh
+    ~/.tmux: tmux
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux-powerlinerc: tmux/tmux-powerlinerc
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
     ~/.zshrc: zsh/zshrc
     ~/.zsh_aliases: zsh/zsh_aliases
-    ~/.oh-my-zsh: zsh/oh-my-zsh
-    ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux-powerlinerc: tmux/tmux-powerlinerc
-    ~/.tmux: tmux
-    ~/.irssi: irssi
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
