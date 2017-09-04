@@ -1,1 +1,1 @@
-/Users/hashbang/.vimrc
+/Users/hashbang/.dotfiles/vim/vimrc
