@@ -7,11 +7,9 @@
 - link:
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
-    ~/.zshrc: zshrc
-    ~/.zsh_aliases: zsh_aliases
-    ~/.oh-my-zsh: oh-my-zsh
-    ~/.dotfiles/oh-my-zsh/custom/plugins: zsh-plugins
-    ~/.dotfiles/oh-my-zsh/custom/themes: zsh-themes
+    ~/.zshrc: zsh/zshrc
+    ~/.zsh_aliases: zsh/zsh_aliases
+    ~/.oh-my-zsh: zsh/oh-my-zsh
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux-powerlinerc: tmux/tmux-powerlinerc
     ~/.tmux: tmux
