@@ -20,4 +20,5 @@
   - mkdir -p ~/.dotfiles_local
   - ./fonts/powerline/install.sh
   - source ~/.zshrc
+  - if [[ -n "$TMUX" ]]; then tmux source-file ~/.tmux.conf; ./tmux/plugins/tpm/scripts/install_plugins.sh; fi
 
