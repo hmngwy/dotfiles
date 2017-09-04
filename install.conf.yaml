@@ -17,7 +17,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - mkdir ~/.dotfiles_local
+  - mkdir -p ~/.dotfiles_local
+  - ./fonts/powerline/install.sh
   - source ~/.zshrc
-  - if [[ -n "$TMUX" ]]; then tmux source-file ~/.tmux.conf; fi
 

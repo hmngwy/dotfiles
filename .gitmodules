@@ -13,3 +13,6 @@
 [submodule "zsh-themes/bullet-train"]
 	path = zsh/omz-custom/themes/bullet-train
 	url = https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git
+[submodule "fonts/powerline"]
+	path = fonts/powerline
+	url = https://github.com/powerline/fonts.git
