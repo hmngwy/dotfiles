@@ -6,7 +6,7 @@
 
 - link:
     ~/.vim: vim
-    ~/.vimrc: vimrc
+    ~/.vimrc: vim/vimrc
     ~/.zshrc: zshrc
     ~/.zsh_aliases: zsh_aliases
     ~/.oh-my-zsh: oh-my-zsh
