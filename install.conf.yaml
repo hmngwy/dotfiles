@@ -12,8 +12,8 @@
     ~/.oh-my-zsh: oh-my-zsh
     ~/.dotfiles/oh-my-zsh/custom/plugins: zsh-plugins
     ~/.dotfiles/oh-my-zsh/custom/themes: zsh-themes
-    ~/.tmux.conf: tmux.conf
-    ~/.tmux-powerlinerc: tmux-powerlinerc
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux-powerlinerc: tmux/tmux-powerlinerc
     ~/.tmux: tmux
     ~/.irssi: irssi
 
