@@ -57,8 +57,21 @@ source /usr/local/bin/virtualenvwrapper.sh
 # Require virtualenv for pip, reduce garbage on global
 export PIP_REQUIRE_VIRTUALENV=true
 
-if [ -n "$VIRTUAL_ENV" ]; then
-  source "$VIRTUAL_ENV/bin/activate"
+# Exporting any saved tmux env so that zsh can access it
+for var in $(tmux show-environment | grep -v "^-"); do
+  eval "export TMUX_$var";
+done;
+
+# If pyvenv is set for this window, new panes will activate it
+WINDOW_VENV_VAR="TMUX_VIRTUAL_ENV$(tmux display-message -p '#I')"
+VENV_PATH=(${(P)WINDOW_VENV_VAR})
+if [[ -n "$VENV_PATH" ]]; then
+  workon `basename $VENV_PATH`
+fi
+
+# Save venv to tmux env, localizes to window,  so that new pane can access it
+if [[ -n "$TMUX" ]] && [[ -n "$VIRTUAL_ENV" ]]; then
+  tmux set-environment VIRTUAL_ENV$(tmux display-message -p '#I') $VIRTUAL_ENV
 fi
 
 # Finally load OMZ, Aliases, then local settings
