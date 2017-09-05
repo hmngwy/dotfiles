@@ -1,6 +1,7 @@
 - defaults:
     link:
       relink: true
+      force: true
 
 - clean: ['~']
 
@@ -13,9 +14,8 @@
     ~/.tmux-powerlinerc: tmux/tmux-powerlinerc
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
-    ~/.virtualenvs/postactivate:
-      force: true
-      path: venv/postactivate
+    ~/.virtualenvs/postactivate: venv/postactivate
+    ~/.virtualenvs/postdeactivate: venv/postdeactivate
     ~/.zshrc: zsh/zshrc
     ~/.zsh_aliases: zsh/zsh_aliases
 

@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+if [[ -n "$TMUX" ]]; then
+  tmux set-environment TMUX_VENV$(tmux display-message -p '#I') ""
+fi
