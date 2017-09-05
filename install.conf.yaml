@@ -13,6 +13,9 @@
     ~/.tmux-powerlinerc: tmux/tmux-powerlinerc
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
+    ~/.virtualenvs/postactivate:
+      force: true
+      path: venv/postactivate
     ~/.zshrc: zsh/zshrc
     ~/.zsh_aliases: zsh/zsh_aliases
 
@@ -20,7 +23,7 @@
   - [mkdir -p ~/.dotfiles_local, Creating local override directory]
   - [git submodule update --init --recursive, Installing submodules]
   - [vim +PlugInstall +qall &, Installing Vim plugins]
-  - [./fonts/powerline/install.sh, Installing powerline fonts]
+  - [./fonts/powerline/install.sh &, Installing powerline fonts]
   - [source ~/.zshrc, Sourcing zshrc]
   - [tmux source-file ~/.tmux.conf; ./tmux/plugins/tpm/scripts/install_plugins.sh, Sourcing tmux.conf]
 
