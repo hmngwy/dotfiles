@@ -2,6 +2,7 @@
 " " Configuration goes in the appropriate modules/plugins/*.vim file.
 " " So configuration for tmux.vim would go in modules/plugins/tmux.vim.vim
 
+Plug 'tell-k/vim-autopep8'
 Plug 'tomasr/molokai'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
