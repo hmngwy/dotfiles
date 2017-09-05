@@ -7,7 +7,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'embear/vim-localvimrc'
-Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'neomake/neomake'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
