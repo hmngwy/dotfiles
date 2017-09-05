@@ -5,15 +5,13 @@ nmap <C-t> :enew<cr>
 nmap <C-l> :bnext<CR>
 nmap <C-h> :bprevious<CR>
 nmap <C-q> :bp <BAR> bd #<CR>
-nmap <leader>bl :ls<CR>
 
 " C-o to insert new line below
 :nmap <C-o> <esc>o
 :imap <C-o> <esc>o
 
 " F2 to save
-:nnoremap <F2> :w<cr>
-:inoremap <F2> <c-o>:w<cr>
+nnoremap <silent> <leader>s :w<CR>
 
 " Show Errors
 function! ToggleErrors()
