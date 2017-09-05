@@ -9,6 +9,7 @@
     ~/.irssi: irssi
     ~/.config/nvim: vim
     ~/.oh-my-zsh: zsh/oh-my-zsh
+    ~/.pylintrc: python/pylintrc
     ~/.tmux: tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux-powerlinerc: tmux/tmux-powerlinerc
