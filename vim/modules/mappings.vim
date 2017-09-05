@@ -1,6 +1,9 @@
 " Set the local leader.
 let maplocalleader = "|"
 
+" Quick save 
+nnoremap <silent> <leader><leader> :w<CR>
+
 " Clears the search.
 function! s:clear_search_results()
   let @/ = ""
@@ -47,17 +50,20 @@ nnoremap <silent> <leader>wf :tab sp<CR>
 nnoremap <silent> <leader>gl :diffget LOCAL<CR>
 nnoremap <silent> <leader>gr :diffget REMOTE<CR>
 
-" Print out the current mappings.
-function! s:show_mappings()
-  let path = Dot('mappings.sh')
-  exec '!' . path
-endfunction
-
-nnoremap <silent> <leader><leader> :call <SID>show_mappings()<CR>
-
 " Easy escape.
 inoremap jk <esc>
 
 " Quick session bindings.
 nnoremap <silent> <leader>sw :mksession! .quicksave.vim<CR>:echo "Session saved."<CR>
 nnoremap <silent> <leader>sr :source .quicksave.vim<CR>:echo "Session loaded."<CR>
+
+" Show linter output
+function! ToggleErrors()
+    if empty(filter(tabpagebuflist(), 'getbufvar(v:val, "&buftype") is# "quickfix"'))
+      lopen
+    else
+      lclose
+    endif
+endfunction
+
+nnoremap <silent> <leader>e :<C-u>call ToggleErrors()<CR>
