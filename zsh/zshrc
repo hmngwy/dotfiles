@@ -6,24 +6,6 @@ source ~/.dotfiles_local/env
 # Theme
 ZSH_THEME="bullet-train/bullet-train"
 
-# Bullet Train Theme Customization
-BULLETTRAIN_TIME_SHOW=false
-BULLETTRAIN_DIR_FG='black'
-BULLETTRAIN_GIT_BG='250'
-BULLETTRAIN_DIR_EXTENDED=0
-
-prompt_hostname() {
-  prompt_segment black grey "$(hostname -s)"
-}
-
-BULLETTRAIN_PROMPT_ORDER=(
-  hostname
-  dir
-  virtualenv
-  git
-  context
-)
-
 # Tab-completion interface
 COMPLETION_WAITING_DOTS="true"
 

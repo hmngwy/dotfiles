@@ -18,3 +18,60 @@ alias wan='curl ipinfo.io/ip'
 alias irssi='TERM=screen-256color irssi'
 alias vim=nvim
 alias cat=ccat
+
+# Bullet Train Theme Customization
+BULLETTRAIN_TIME_SHOW=false
+BULLETTRAIN_DIR_FG='black'
+BULLETTRAIN_GIT_BG='250'
+BULLETTRAIN_DIR_EXTENDED=0
+BULLETTRAIN_VIRTUALENV_PREFIX=''
+
+prompt_dirvenv() {
+  if [[ $BULLETTRAIN_DIR_SHOW == false ]]; then
+    return
+  fi
+
+  local dir=''
+  local _context="$(context)"
+  [[ $BULLETTRAIN_DIR_CONTEXT_SHOW == true && -n "$_context" ]] && dir="${dir}${_context}:"
+
+  if [[ $BULLETTRAIN_DIR_EXTENDED == 0 ]]; then
+    #short directories
+    dir="${dir}%1~"
+  elif [[ $BULLETTRAIN_DIR_EXTENDED == 2 ]]; then
+    #long directories
+    dir="${dir}%0~"
+  else
+    #medium directories (default case)
+    dir="${dir}%4(c:...:)%3c"
+  fi
+
+  local virtualenv_path="$VIRTUAL_ENV"
+  local venv_name="$(basename $virtualenv_path)"
+  local base_dir="$(basename $(pwd))"
+  if [ "$venv_name" = "$base_dir" ]; then
+    prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG " "$dir
+  else
+    if [[ $BULLETTRAIN_VIRTUALENV_SHOW == false ]]; then
+      return
+    fi
+    local virtualenv_path="$VIRTUAL_ENV"
+    if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
+      prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG $BULLETTRAIN_VIRTUALENV_PREFIX"$(basename $virtualenv_path)"
+    elif which pyenv &> /dev/null; then
+      prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG $BULLETTRAIN_VIRTUALENV_PREFIX"$(pyenv version | sed -e 's/ (set.*$//' | tr '\n' ' ' | sed 's/.$//')"
+    fi
+    prompt_segment $BULLETTRAIN_DIR_BG $BULLETTRAIN_DIR_FG $dir
+  fi
+}
+
+prompt_hostname() {
+  prompt_segment black grey "$(hostname -s)"
+}
+
+BULLETTRAIN_PROMPT_ORDER=(
+  hostname
+  dirvenv
+  git
+  context
+)
