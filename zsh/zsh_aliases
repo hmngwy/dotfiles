@@ -55,7 +55,7 @@ prompt_dirvenv() {
   fi
 
   if [[ "$VIRTUAL_ENV" ]]; then
-    local proj_home=""
+    local proj_home="~"
     if [ -f "$VIRTUAL_ENV/.project" ]; then
       proj_home=`cat $VIRTUAL_ENV/.project`
     fi
