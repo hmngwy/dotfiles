@@ -9,6 +9,7 @@ edit () {
   editor $(ls | grep $1)
 }
 
+alias weather_local='/Users/hashbang/.virtualenvs/weatheralert/bin/python3 /Users/hashbang/Projects/weatheralert/index.py'
 alias tmux='tmux -2'
 alias reload='source ~/.zshrc'
 alias fu=cmdfu
