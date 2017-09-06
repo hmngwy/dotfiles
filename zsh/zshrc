@@ -35,6 +35,7 @@ export HISTCONTROL="erasedups:ignoreboth"
 
 # Virtualenv variables
 export WORKON_HOME=~/.virtualenvs
+export PROJECT_HOME=~/Projects
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Require virtualenv for pip, reduce garbage on global
