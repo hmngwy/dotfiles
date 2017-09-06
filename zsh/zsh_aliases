@@ -26,6 +26,13 @@ BULLETTRAIN_GIT_BG='250'
 BULLETTRAIN_DIR_EXTENDED=0
 BULLETTRAIN_VIRTUALENV_PREFIX=''
 
+_seg_venv() {
+    if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
+      prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG $1"$(basename $virtualenv_path)"
+    elif which pyenv &> /dev/null; then
+      prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG $1"$(pyenv version | sed -e 's/ (set.*$//' | tr '\n' ' ' | sed 's/.$//')"
+    fi
+}
 prompt_dirvenv() {
   if [[ $BULLETTRAIN_DIR_SHOW == false ]]; then
     return
@@ -49,19 +56,14 @@ prompt_dirvenv() {
   local virtualenv_path="$VIRTUAL_ENV"
   local venv_name="$(basename $virtualenv_path)"
   local base_dir="$(basename $(pwd))"
-  if [ "$venv_name" = "$base_dir" ]; then
-    prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG " "$dir
+  if [[ "$(pwd)" == *"$venv_name"* ]]; then
+    _seg_venv "⌂ "
+    if [ "$venv_name" != "$base_dir" ]; then
+      prompt_segment $BULLETTRAIN_DIR_BG $BULLETTRAIN_DIR_FG $dir
+    fi
   else
-    if [[ $BULLETTRAIN_VIRTUALENV_SHOW == false ]]; then
-      return
-    fi
-    local virtualenv_path="$VIRTUAL_ENV"
-    if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-      prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG $BULLETTRAIN_VIRTUALENV_PREFIX"$(basename $virtualenv_path)"
-    elif which pyenv &> /dev/null; then
-      prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG $BULLETTRAIN_VIRTUALENV_PREFIX"$(pyenv version | sed -e 's/ (set.*$//' | tr '\n' ' ' | sed 's/.$//')"
-    fi
     prompt_segment $BULLETTRAIN_DIR_BG $BULLETTRAIN_DIR_FG $dir
+    _seg_venv
   fi
 }
 
