@@ -29,6 +29,7 @@
   - ["if ! type \"zsh\" > /dev/null; then brew install zsh; fi", Installing zsh]
   - ["if ! grep -Fxq \"$(which zsh)\" /etc/shells; then sudo sh -c 'echo \"$(which zsh)\" >> /etc/shells'; fi", Registering zsh as shell]
   - ["chsh -s $(which zsh)", Changing user shell]
+  - ["if ! type \"pip\" > /dev/null; then brew install python; fi", Installing python from brew]
   - ["bash -c 'PIP_REQUIRE_VIRTUALENV=\"\" pip install -q virtualenv virtualenvwrapper'", Installing virtualenvwrapper]
   - [brew install neovim ccat tmux, Installing brew packages]
   - [mkdir -p ~/.dotfiles_local, Creating local override directory]
