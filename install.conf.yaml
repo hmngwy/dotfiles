@@ -26,14 +26,15 @@
     ~/.zsh_aliases: zsh/zsh_aliases
 
 - shell:
-  - [brew install zsh, Installing zsh]
-  - [chsh -s $(which zsh), Changing user shell]
-  - [brew install neovim, ccat, tmux]
+  - ["if ! type \"zsh\" > /dev/null; then brew install zsh; fi", Installing zsh]
+  - ["sudo sh -c 'echo \"$(which zsh)\" >> /etc/shells'", Registering zsh as shell]
+  - ["sudo chsh -s $(which zsh)", Changing user shell]
+  - [brew install neovim ccat tmux, Installing brew packages]
   - [mkdir -p ~/.dotfiles_local, Creating local override directory]
   - [git submodule update --init --recursive, Installing submodules]
   - [vim +PlugInstall +qall &, Installing Vim plugins]
   - [./fonts/powerline/install.sh &, Installing powerline fonts]
   - [pip install flake8 flake8-docstrings &, Installing linters]
-  - [source ~/.zshrc, Sourcing zshrc]
+  - ["if [ \"$ZSH_NAME\" ]; then source ~/.zshrc; fi", Sourcing zshrc]
   - [tmux source-file ~/.tmux.conf; ./tmux/plugins/tpm/scripts/install_plugins.sh, Sourcing tmux.conf]
 
