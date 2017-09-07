@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.dotfiles/zsh/omz-custom
-source ~/.dotfiles_local/env
+[[ -f "~/.dotfiles_local/env" ]] && source ~/.dotfiles_local/env
 
 # Theme
 ZSH_THEME="bullet-train/bullet-train"
@@ -36,7 +36,7 @@ export HISTCONTROL="erasedups:ignoreboth"
 # Virtualenv variables
 export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=~/Projects
-source /usr/local/bin/virtualenvwrapper.sh
+[[ -f "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
 
 # Require virtualenv for pip, reduce garbage on global
 export PIP_REQUIRE_VIRTUALENV=true
@@ -56,4 +56,4 @@ fi
 # Finally load OMZ, Aliases, then local settings
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases
-source ~/.dotfiles_local/zshrc
+[[ -f "~/.dotfiles_local/zshrc" ]] && source ~/.dotfiles_local/zshrc
