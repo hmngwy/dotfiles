@@ -1,5 +1,5 @@
 gpip(){
-   PIP_REQUIRE_VIRTUALENV="" pip "$@"
+   PIP_REQUIRE_VIRTUALENV="" pip2 "$@"
 }
 cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
 publish () {
