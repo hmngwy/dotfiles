@@ -26,6 +26,8 @@
     ~/.zsh_aliases: zsh/zsh_aliases
 
 - shell:
+  - [brew install zsh, Installing zsh]
+  - [brew install neovim, ccat, tmux]
   - [mkdir -p ~/.dotfiles_local, Creating local override directory]
   - [git submodule update --init --recursive, Installing submodules]
   - [vim +PlugInstall +qall &, Installing Vim plugins]
