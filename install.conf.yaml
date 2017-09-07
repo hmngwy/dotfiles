@@ -27,6 +27,7 @@
 
 - shell:
   - [brew install zsh, Installing zsh]
+  - [chsh -s $(which zsh), Changing user shell]
   - [brew install neovim, ccat, tmux]
   - [mkdir -p ~/.dotfiles_local, Creating local override directory]
   - [git submodule update --init --recursive, Installing submodules]
