@@ -7,15 +7,21 @@
 
 - link:
     ~/.irssi: irssi
-    ~/.config/nvim: vim
+    ~/.config/nvim:
+      create: true
+      path: vim
     ~/.oh-my-zsh: zsh/oh-my-zsh
     ~/.tmux: tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux-powerlinerc: tmux/tmux-powerlinerc
     ~/.vim: vim
     ~/.vimrc: vim/vimrc
-    ~/.virtualenvs/postactivate: venv/postactivate
-    ~/.virtualenvs/postdeactivate: venv/postdeactivate
+    ~/.virtualenvs/postactivate:
+      create: true
+      path: venv/postactivate
+    ~/.virtualenvs/postdeactivate:
+      create: true
+      path: venv/postdeactivate
     ~/.zshrc: zsh/zshrc
     ~/.zsh_aliases: zsh/zsh_aliases
 
