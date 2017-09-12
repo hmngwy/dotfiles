@@ -1,5 +1,21 @@
-1. Install zsh, and change shell
-2. `brew/apt-get install ccat neovim tmux python3 `
-3. `pip install flake8 flake8-docstrings autopep8 virtualenv virtualenvwrapper`
-4. Clone this repo, inside it run ./install
+#### macOS
+
+```
+./darwin-setup # then restart term
+./install
+```
+
+#### Linux
+
+```
+apt/yum install zsh tmux neovim python python3 ccat
+sudo sh -c 'echo "$(which zsh)" >> /etc/shells';
+pip install virtualenv virtualenvwrapper pylint pycodestyle pydocstyle autopep8
+chsh -s $(which zsh) # restart term
+./install
+```
+
+#### Windows
+
+😂
 
