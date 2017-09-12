@@ -18,7 +18,7 @@ export KEYTIMEOUT=1
 MODE_INDICATOR="%{$fg_bold[red]%}%{$fg[red]%}[NORMAL]%{$reset_color%}"
 
 # OMZ Plugins
-plugins=(virtualenv tmux git zsh-syntax-highlighting)
+plugins=(virtualenv tmux git git-flow-avh zsh-syntax-highlighting)
 
 # User configuration
 
