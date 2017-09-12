@@ -20,7 +20,7 @@ nvim -u $HOME/.dotfiles/vim/init.vim +PlugClean +PlugInstall +PlugUpdate +qall
 
 # Creating .dotfiles pyvenv
 if [ ! -f $WORKON_HOME/.dotfiles/bin/python ]; then
-  mkvirtualenv -p `which python3` -a $HOME/.dotfiles .dotfiles
+  mkvirtualenv -p `which python3` -r $HOME/.dotfiles/requirements.txt -a $HOME/.dotfiles .dotfiles
 fi
 
 # Link local tmux-powerline segments
