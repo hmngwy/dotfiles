@@ -18,4 +18,10 @@ tmux source-file ~/.tmux.conf
 nvim -u $HOME/.dotfiles/vim/init.vim +PlugClean +PlugInstall +PlugUpdate +qall
 
 # Creating .dotfiles pyvenv
-mkvirtualenv -p `which python3` -a $HOME/.dotfiles .dotfiles
+if [ ! -f $WORKON_HOME/.dotfiles/bin/python ]; then
+  mkvirtualenv -p `which python3` -a $HOME/.dotfiles .dotfiles
+fi
+
+# Link local tmux-powerline segments
+ln -s $HOME/.dotfiles/scripts/weatheralert/weather_local.sh \
+  $HOME/.dotfiles/tmux/plugins/tmux-powerline/segments/weather_local.sh
