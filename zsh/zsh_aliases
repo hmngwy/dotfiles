@@ -1,23 +1,14 @@
 gpip(){
    PIP_REQUIRE_VIRTUALENV="" pip2 "$@"
 }
-cmdfu(){ curl "http://www.commandlinefu.com/commands/matching/$@/$(echo -n $@ | openssl base64)/plaintext"; }
+
 publish () {
   mv $1 "$(date +%Y-%m-%d) $1"
 }
+
 edit () {
   editor $(ls | grep $1)
 }
-
-alias weather_local='/Users/hashbang/.virtualenvs/weatheralert/bin/python3 /Users/hashbang/Projects/weatheralert/index.py'
-alias tmux='tmux -2'
-alias reload='source ~/.zshrc'
-alias fu=cmdfu
-alias show_palette='for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done'
-alias wan='curl ipinfo.io/ip'
-alias irssi='TERM=screen-256color irssi'
-alias vim=nvim
-alias cat=ccat
 
 # Bullet Train Theme Customization
 BULLETTRAIN_TIME_SHOW=false
@@ -34,6 +25,7 @@ _seg_venv() {
     prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG $1"$(pyenv version | sed -e 's/ (set.*$//' | tr '\n' ' ' | sed 's/.$//')"
   fi
 }
+
 prompt_dirvenv() {
   if [[ $BULLETTRAIN_DIR_SHOW == false ]]; then
     return
@@ -85,3 +77,13 @@ BULLETTRAIN_PROMPT_ORDER=(
   git
   context
 )
+
+alias tmux='tmux -2'
+alias reload='source ~/.zshrc'
+alias fu=cmdfu
+alias show_palette='for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done'
+alias wan='curl ipinfo.io/ip'
+alias irssi='TERM=screen-256color irssi'
+alias vim=nvim
+alias cat=ccat
+
