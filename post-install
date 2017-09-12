@@ -1,0 +1,21 @@
+#!/usr/local/bin/zsh
+
+# This assumes you are in zsh, i.e. ./install in zsh
+
+# Source zshrc
+source $HOME/.zshrc
+
+# Source tmux
+tmux source-file ~/.tmux.conf
+
+# Install tmux plugins
+./tmux/plugins/tpm/scripts/install_plugins.sh
+
+# Install fonts
+./fonts/powerline/install.sh
+
+# Install vim plugins
+nvim -u $HOME/.dotfiles/vim/init.vim +PlugClean +PlugInstall +PlugUpdate +qall
+
+# Creating .dotfiles pyvenv
+mkvirtualenv -p `which python3` -a $HOME/.dotfiles .dotfiles

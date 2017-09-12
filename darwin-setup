@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+echo "Installing Homebrew"
+if [ $(which brew) ]; then
+  brew update
+else
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+function install_or_upgrade {
+  if brew ls --versions "$1" >/dev/null; then
+    HOMEBREW_NO_AUTO_UPDATE=1 brew upgrade "$1"
+  else
+    HOMEBREW_NO_AUTO_UPDATE=1 brew install "$1"
+  fi
+}
+
+install_or_upgrade zsh
+install_or_upgrade tmux
+install_or_upgrade neovim
+install_or_upgrade python
+install_or_upgrade python3
+install_or_upgrade ccat
+
+if ! grep -Fxq "$(which zsh)" /etc/shells; then
+  sudo sh -c 'echo "$(which zsh)" >> /etc/shells';
+fi
+
+# user brew python in global
+if [ ! -f "/usr/local/bin/python" ]; then
+  ln -s $(which python2) /usr/local/bin/python
+fi
+
+# install python venv tools
+PIP_REQUIRE_VIRTUALENV="" pip2 install virtualenv virtualenvwrapper pylint pycodestyle pydocstyle autopep8
+
+# change user shell
+if [ $(finger $LOGNAME | grep Shell | cut -d: -f3) == *"$(which zsh)"* ]; then
+  chsh -s $(which zsh)
+fi
+
+echo "You should restart term and run ./install inside zsh"

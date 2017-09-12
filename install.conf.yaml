@@ -16,7 +16,6 @@
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux-powerlinerc: tmux/tmux-powerlinerc
     ~/.vim: vim
-    ~/.vimrc: vim/vimrc
     ~/.virtualenvs/postactivate:
       create: true
       path: venv/postactivate
@@ -27,18 +26,6 @@
     ~/.zsh_aliases: zsh/zsh_aliases
 
 - shell:
-  - ["if ! type \"zsh\" > /dev/null; then brew install zsh; fi", Installing zsh]
-  - ["if ! grep -Fxq \"$(which zsh)\" /etc/shells; then sudo sh -c 'echo \"$(which zsh)\" >> /etc/shells'; fi", Registering zsh as shell]
-  - ["chsh -s $(which zsh)", Changing user shell]
-  - ["if ! type \"pip\" > /dev/null; then brew install python python3; fi", Installing python from brew]
-  - ["ln -s $(which python2) /usr/local/bin/python", Installing python from brew]
-  - ["bash -c 'PIP_REQUIRE_VIRTUALENV=\"\" pip2 install -q virtualenv virtualenvwrapper'", Installing virtualenvwrapper]
-  - [brew install neovim ccat tmux, Installing brew packages]
-  - [mkdir -p ~/.dotfiles_local, Creating local override directory]
   - [git submodule update --init --recursive, Installing submodules]
-  - [vim +PlugInstall +qall &, Installing Vim plugins]
-  - [./fonts/powerline/install.sh &, Installing powerline fonts]
-  - [pip install flake8 flake8-docstrings &, Installing linters]
-  - ["if [ \"$ZSH_NAME\" ]; then source ~/.zshrc; fi", Sourcing zshrc]
-  - [tmux source-file ~/.tmux.conf; ./tmux/plugins/tpm/scripts/install_plugins.sh, Sourcing tmux.conf]
+  - [mkdir -p ~/.dotfiles_local, Creating local override directory]
 
