@@ -18,9 +18,13 @@ export KEYTIMEOUT=1
 MODE_INDICATOR="%{$fg_bold[red]%}%{$fg[red]%}[NORMAL]%{$reset_color%}"
 
 # OMZ Plugins
-plugins=(virtualenv tmux git git-flow-avh zsh-syntax-highlighting)
+plugins=(virtualenv tmux git git-flow-avh zsh-completions zsh-syntax-highlighting)
 
 # User configuration
+
+# Init completions
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
 
 # Encoding
 export LC_ALL=en_US.UTF-8

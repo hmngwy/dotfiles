@@ -78,6 +78,8 @@ BULLETTRAIN_PROMPT_ORDER=(
   context
 )
 
+setopt no_complete_aliases
+
 alias tmux='tmux -2'
 alias reload='source ~/.zshrc'
 alias fu=cmdfu
@@ -87,3 +89,17 @@ alias irssi='TERM=screen-256color irssi'
 alias vim=nvim
 alias cat=ccat
 alias h='howdoi -n 3'
+
+alias g='git'
+compdef g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gca='git commit --amend'
+alias gt='git commit'
+alias grm='git rm'
+alias gmv='git mv'
+alias gf='git fetch'
+alias gf='git rebase'
+alias gps='git push'
+alias gpl='git pull'
