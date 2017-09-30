@@ -1,6 +1,7 @@
 vim/plugged
 .netrwhist
 tmux/plugins
+tmux/resurrect
 oh-my-zsh
 irssi/config
 irssi/away.log
