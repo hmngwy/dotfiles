@@ -1,18 +1,12 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "oh-my-zsh"]
-	path = zsh/oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule "zsh-plugins/zsh-syntax-highlighting"]
-	path = zsh/omz-custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "zsh-themes/bullet-train"]
-	path = zsh/omz-custom/themes/bullet-train
-	url = https://github.com/caiogondim/bullet-train-oh-my-zsh-theme.git
 [submodule "fonts/powerline"]
 	path = fonts/powerline
 	url = https://github.com/powerline/fonts.git
+[submodule "zplug"]
+	path = zplug
+	url = https://github.com/zplug/zplug.git

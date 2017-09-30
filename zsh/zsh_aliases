@@ -68,14 +68,13 @@ prompt_dirvenv() {
 }
 
 prompt_hostname() {
-  prompt_segment black grey "$(hostname -s)"
+  prompt_segment black grey "@"
 }
 
 BULLETTRAIN_PROMPT_ORDER=(
   hostname
   dirvenv
   git
-  context
 )
 
 setopt no_complete_aliases
@@ -89,17 +88,3 @@ alias irssi='TERM=screen-256color irssi'
 alias vim=nvim
 alias cat=ccat
 alias h='howdoi -n 3'
-
-alias g='git'
-compdef g='git'
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit -m'
-alias gca='git commit --amend'
-alias gt='git commit'
-alias grm='git rm'
-alias gmv='git mv'
-alias gf='git fetch'
-alias gre='git rebase'
-alias gps='git push'
-alias gpl='git pull'

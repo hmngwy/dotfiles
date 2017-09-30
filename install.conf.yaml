@@ -22,6 +22,7 @@
     ~/.virtualenvs/postdeactivate:
       create: true
       path: venv/postdeactivate
+    ~/.gitflow_export: gitflow_export
     ~/.zshrc: zsh/zshrc
     ~/.zsh_aliases: zsh/zsh_aliases
 

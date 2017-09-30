@@ -1,46 +1,51 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_CUSTOM=$HOME/.dotfiles/zsh/omz-custom
-[[ -f "~/.dotfiles_local/env" ]] && source ~/.dotfiles_local/env
+consrc () {
+  [[ -f "$1" ]] && source "$1"
+}
 
-# Theme
-ZSH_THEME="bullet-train/bullet-train"
+export DF=$HOME/.dotfiles
+export DFL=$HOME/.dotfiles_local
 
-# Tab-completion interface
-COMPLETION_WAITING_DOTS="true"
+source $DF/env
+consrc $DFL/env
+
+export ZPLUG_HOME=$DF/zplug
+source $ZPLUG_HOME/init.zsh
+
+zplug "plugins/virtualenv", from:oh-my-zsh
+zplug "plugins/tmux", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/git-flow-avh", from:oh-my-zsh
+zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+
+zplug "petervanderdoes/git-flow-completion", from:github
+zplug "zsh-users/zsh-completions", from:github
+zplug "zsh-users/zsh-syntax-highlighting", from:github
+zplug "Treri/fzf-zsh", from:github
+zplug "andrewferrier/fzf-z", from:github
+
+zplug "caiogondim/bullet-train.zsh", from:github, as:theme
+
+zplug "rupa/z", use:z.sh
 
 # TMUX Plugin config
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
 
-# ZSH VI Mode Config
-export KEYTIMEOUT=1
-MODE_INDICATOR="%{$fg_bold[red]%}%{$fg[red]%}[NORMAL]%{$reset_color%}"
-
-# OMZ Plugins
-plugins=(virtualenv tmux git git-flow-avh zsh-completions zsh-syntax-highlighting)
-
-# User configuration
-
 # Init completions
-fpath=(~/.zsh/completions $fpath)
+fpath=($DF/zplug/repos/zsh-users/zsh-completions/src $fpath)
 autoload -U compinit && compinit
 
-# Encoding
+# Language and Encoding
 export LC_ALL=en_US.UTF-8
-
-# Language
 export LANG=en_US.UTF-8
 
 # Avoid duplicates in your bash history
 export HISTCONTROL="erasedups:ignoreboth"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # Virtualenv variables
 export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=~/Projects
-[[ -f "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
+consrc "/usr/local/bin/virtualenvwrapper.sh"
 
 # Require virtualenv for pip, reduce garbage on global
 export PIP_REQUIRE_VIRTUALENV=true
@@ -57,7 +62,10 @@ if [[ -n "$VENV_PATH" ]]; then
   workon `basename $VENV_PATH`
 fi
 
-# Finally load OMZ, Aliases, then local settings
-source $ZSH/oh-my-zsh.sh
-source ~/.zsh_aliases
-[[ -f "~/.dotfiles_local/zshrc" ]] && source ~/.dotfiles_local/zshrc
+source $DF/zsh/zsh_aliases
+consrc $DFL/zsh_aliases
+consrc $DFL/zshrc
+
+consrc ~/.fzf/shell/key-bindings.zsh
+
+zplug load
