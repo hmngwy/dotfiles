@@ -14,7 +14,6 @@
     ~/.pylintrc: python/pylintrc
     ~/.tmux: tmux
     ~/.tmux.conf: tmux/tmux.conf
-    ~/.tmux-powerlinerc: tmux/tmux-powerlinerc
     ~/.vim: vim
     ~/.virtualenvs/postactivate:
       create: true
