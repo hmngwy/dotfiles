@@ -21,6 +21,8 @@ install_or_upgrade neovim
 install_or_upgrade python
 install_or_upgrade python3
 install_or_upgrade ccat
+install_or_upgrade git-flow-avh
+install_or_upgrade gnu-getopt
 
 if ! grep -Fxq "$(which zsh)" /etc/shells; then
   sudo sh -c 'echo "$(which zsh)" >> /etc/shells';
