@@ -28,4 +28,7 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [mkdir -p ~/.dotfiles_local, Creating local override directory]
+  - [source ~/.zshrc]
+  - [zplug install]
+  - [zplug load --verbose]
 
