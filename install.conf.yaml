@@ -17,10 +17,10 @@
     ~/.vim: vim
     ~/.virtualenvs/postactivate:
       create: true
-      path: venv/postactivate
+      path: python/venv/postactivate
     ~/.virtualenvs/postdeactivate:
       create: true
-      path: venv/postdeactivate
+      path: python/venv/postdeactivate
     ~/.gitflow_export: gitflow_export
     ~/.zshrc: zsh/zshrc
     ~/.zsh_aliases: zsh/zsh_aliases
