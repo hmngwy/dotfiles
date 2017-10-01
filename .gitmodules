@@ -7,3 +7,6 @@
 [submodule "fonts/powerline"]
 	path = fonts/powerline
 	url = https://github.com/powerline/fonts.git
+[submodule "zplug"]
+	path = zplug
+	url = https://github.com/zplug/zplug.git

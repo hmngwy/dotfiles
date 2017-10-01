@@ -8,7 +8,7 @@ export DFL=$HOME/.dotfiles_local
 source $DF/env
 consrc $DFL/env
 
-export ZPLUG_HOME=$DF/zsh/zplug
+export ZPLUG_HOME=$DF/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/virtualenv", from:oh-my-zsh
