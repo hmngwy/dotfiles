@@ -27,7 +27,15 @@ zplug "andrewferrier/fzf-z", from:github
 zplug "caiogondim/bullet-train.zsh", from:github, as:theme
 
 zplug "rupa/z", use:z.sh
-zplug "~/.dotfiles/zsh/plugins", from:local
+zplug "~/.dotfiles/zsh/plugins/key-bindings", from:local
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
 # TMUX Plugin config
 ZSH_TMUX_AUTOSTART=true

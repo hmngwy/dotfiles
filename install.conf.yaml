@@ -6,11 +6,9 @@
 - clean: ['~']
 
 - link:
-    ~/.irssi: irssi
     ~/.config/nvim:
       create: true
       path: vim
-    ~/.oh-my-zsh: zsh/oh-my-zsh
     ~/.pylintrc: python/pylintrc
     ~/.tmux: tmux
     ~/.tmux.conf: tmux/tmux.conf
@@ -23,12 +21,8 @@
       path: python/venv/postdeactivate
     ~/.gitflow_export: gitflow_export
     ~/.zshrc: zsh/zshrc
-    ~/.zsh_aliases: zsh/zsh_aliases
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [mkdir -p ~/.dotfiles_local, Creating local override directory]
-  - [source ~/.zshrc]
-  - [zplug install]
-  - [zplug load --verbose]
 
