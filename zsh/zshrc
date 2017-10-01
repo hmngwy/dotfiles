@@ -22,12 +22,11 @@ zplug "petervanderdoes/git-flow-completion", from:github
 zplug "zsh-users/zsh-completions", from:github
 zplug "zsh-users/zsh-syntax-highlighting", from:github
 zplug "Treri/fzf-zsh", from:github
-zplug "andrewferrier/fzf-z", from:github
 
 zplug "caiogondim/bullet-train.zsh", from:github, as:theme
 
-zplug "rupa/z", use:z.sh
 zplug "~/.dotfiles/zsh/plugins/key-bindings", from:local
+zplug "~/.dotfiles/zsh/plugins/fzf-zsh", from:local
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -75,7 +74,5 @@ fi
 source $DF/zsh/zsh_aliases
 consrc $DFL/zsh_aliases
 consrc $DFL/zshrc
-
-consrc ~/.fzf/shell/key-bindings.zsh
 
 zplug load
