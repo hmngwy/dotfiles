@@ -32,7 +32,13 @@ autoload -U compinit && compinit
 
 zplug load
 
-source $DF/zsh/zsh_aliases
+# Load all files from .shell/zshrc.d directory
+if [ -d $AUTOLOAD_HOME ]; then
+  for file in $AUTOLOAD_HOME/*; do
+    source $file
+  done
+fi
+
 consrc $DFL/zsh_aliases
 consrc $DFL/zshrc
 

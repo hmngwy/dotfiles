@@ -6,6 +6,8 @@ consrc () {
 export DF=$HOME/.dotfiles
 export DFL=$HOME/.dotfiles_local
 
+export AUTOLOAD_HOME=$DF/zsh/autoload
+
 # TMUX Plugin config
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
