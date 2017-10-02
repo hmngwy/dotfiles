@@ -1,0 +1,32 @@
+consrc () {
+  [[ -f "$1" ]] && source "$1"
+}
+
+# Dotfiles home shorthand
+export DF=$HOME/.dotfiles
+export DFL=$HOME/.dotfiles_local
+
+# TMUX Plugin config
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOQUIT=false
+
+# Language and Encoding
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Avoid duplicates in your bash history
+export HISTCONTROL="erasedups:ignoreboth"
+
+# Virtualenv variables
+export WORKON_HOME=~/.virtualenvs
+export PROJECT_HOME=~/Projects
+consrc "/usr/local/bin/virtualenvwrapper.sh"
+
+# Require virtualenv for pip, reduce garbage on global
+export PIP_REQUIRE_VIRTUALENV=true
+
+# ZPLUG Home
+export ZPLUG_HOME=$DF/zplug
+
+# Load local env overrides
+consrc $DFL/env

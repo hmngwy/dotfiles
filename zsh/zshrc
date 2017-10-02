@@ -1,14 +1,4 @@
-consrc () {
-  [[ -f "$1" ]] && source "$1"
-}
-
-export DF=$HOME/.dotfiles
-export DFL=$HOME/.dotfiles_local
-
-source $DF/env
-consrc $DFL/env
-
-export ZPLUG_HOME=$DF/zplug
+source $HOME/.dotfiles/env
 source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/virtualenv", from:oh-my-zsh
@@ -21,12 +11,14 @@ zplug "lib/history", from:oh-my-zsh
 zplug "petervanderdoes/git-flow-completion", from:github
 zplug "zsh-users/zsh-completions", from:github
 zplug "zsh-users/zsh-syntax-highlighting", from:github
-zplug "Treri/fzf-zsh", from:github
 
+# Prompt theme
 zplug "caiogondim/bullet-train.zsh", from:github, as:theme
 
-zplug "~/.dotfiles/zsh/plugins/key-bindings", from:local
-zplug "~/.dotfiles/zsh/plugins/fzf-zsh", from:local
+# Local plugins
+zplug "$DF/zsh/plugins/key-bindings", from:local
+zplug "$DF/zsh/plugins/fzf-zsh", from:local
+zplug "$DF/zsh/plugins/tmux-autoworkon", from:local
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -36,43 +28,11 @@ if ! zplug check --verbose; then
     fi
 fi
 
-# TMUX Plugin config
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOQUIT=false
-
-# Init completions
-fpath=($DF/zplug/repos/zsh-users/zsh-completions/src $fpath)
 autoload -U compinit && compinit
 
-# Language and Encoding
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
-# Avoid duplicates in your bash history
-export HISTCONTROL="erasedups:ignoreboth"
-
-# Virtualenv variables
-export WORKON_HOME=~/.virtualenvs
-export PROJECT_HOME=~/Projects
-consrc "/usr/local/bin/virtualenvwrapper.sh"
-
-# Require virtualenv for pip, reduce garbage on global
-export PIP_REQUIRE_VIRTUALENV=true
-
-# Exporting any saved tmux env so that zsh can access it
-for var in $(tmux show-environment | grep "TMUX_VENV"); do
-  eval "export $var";
-done;
-
-# If pyvenv is set for this window, new panes will activate it
-VENV_VAR="TMUX_VENV$(tmux display-message -p '#I')"
-VENV_PATH=(${(P)VENV_VAR})
-if [[ -n "$VENV_PATH" ]]; then
-  workon `basename $VENV_PATH`
-fi
+zplug load
 
 source $DF/zsh/zsh_aliases
 consrc $DFL/zsh_aliases
 consrc $DFL/zshrc
 
-zplug load
