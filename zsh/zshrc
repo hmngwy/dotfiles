@@ -28,9 +28,9 @@ if ! zplug check --verbose; then
     fi
 fi
 
-autoload -U compinit && compinit
-
 zplug load
+
+autoload -U compinit && compinit
 
 # Load all files from .shell/zshrc.d directory
 if [ -d $AUTOLOAD_HOME ]; then
@@ -39,6 +39,6 @@ if [ -d $AUTOLOAD_HOME ]; then
   done
 fi
 
-consrc $DFL/zsh_aliases
 consrc $DFL/zshrc
+consrc $DFL/zsh_aliases
 
