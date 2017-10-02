@@ -1,4 +1,10 @@
-source $HOME/.dotfiles/env
+consrc () {
+  [[ -f "$1" ]] && source "$1"
+}
+
+consrc $DFL/env
+
+# Load ZPLUG
 source $ZPLUG_HOME/init.zsh
 
 zplug "plugins/virtualenv", from:oh-my-zsh
@@ -28,6 +34,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
+# Start loading plugins
 zplug load
 
 autoload -U compinit && compinit
@@ -38,6 +45,9 @@ if [ -d $AUTOLOAD_HOME ]; then
     source $file
   done
 fi
+
+# Conditionally load venvwrapper
+consrc "/usr/local/bin/virtualenvwrapper.sh"
 
 consrc $DFL/zshrc
 consrc $DFL/zsh_aliases

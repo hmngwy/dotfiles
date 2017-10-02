@@ -34,7 +34,7 @@ if [ ! -f "/usr/local/bin/python" ]; then
 fi
 
 # install python venv tools
-PIP_REQUIRE_VIRTUALENV="" pip2 install virtualenv virtualenvwrapper
+PIP_REQUIRE_VIRTUALENV="" pip2 install virtualenv virtualenvwrapper vex
 
 # change user shell
 if [ $(finger $LOGNAME | grep Shell | cut -d: -f3) == *"$(which zsh)"* ]; then

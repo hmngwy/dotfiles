@@ -21,6 +21,7 @@
       path: python/venv/postdeactivate
     ~/.gitflow_export: gitflow_export
     ~/.zshrc: zsh/zshrc
+    ~/.zshenv: zsh/zshenv
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
