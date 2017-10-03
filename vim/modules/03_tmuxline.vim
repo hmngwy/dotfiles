@@ -1,5 +1,4 @@
-let g:airline#extensions#tmuxline#enabled = 1
-let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
+let g:airline#extensions#tmuxline#enabled = 0
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'win'  : '#I #W #F',
