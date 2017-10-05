@@ -4,7 +4,7 @@ let g:tmuxline_preset = {
       \'win'  : '#I #W #F',
       \'cwin' : '#I #W #F',
       \'w'    : '%a',
-      \'x'    : '#W %R',
+      \'x'    : 'hella #W %R',
       \'y'    : '#H',
       \'z'     : '#(curl -s ipinfo.io/ip)',
       \'options': {'status-justify': 'left'}
