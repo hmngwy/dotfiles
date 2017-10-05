@@ -11,4 +11,4 @@ output=''
 [[ -n $(git stash list) ]] && output="${output}S"
 [[ -n $(git log --branches --not --remotes) ]] && output="${output}⬆"
 [[ -n $output ]] && output="$output"  # separate from branch name
-echo "#[fg=colour15,bg=colour88,bold] $output #[fg=colour88,bg=colour3,nobold,nounderscore,noitalics]"
+[[ "${output// }" ]] && echo "#[fg=colour15,bg=colour88,bold] $output #[fg=colour88,bg=colour3,nobold,nounderscore,noitalics]"
