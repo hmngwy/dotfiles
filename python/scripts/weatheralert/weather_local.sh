@@ -1,8 +1,7 @@
-run_segment() {
-  FILE=/tmp/weather_local_cache
-  if test "`find $FILE -mmin +5`"; then
-    $WORKON_HOME/.dotfiles/bin/python $HOME/.dotfiles/scripts/weatheralert/index.py "Makati, Metro Manila" $FILE
-  fi
-  cat $FILE
-  return 0
-}
+FILE=/tmp/weather_local_cache
+if [ ! -f $FILE ] || test "`find $FILE -mmin +5`"; then
+  $WORKON_HOME/.dotfiles/bin/python $HOME/.dotfiles/python/scripts/weatheralert/index.py "Makati, Metro Manila" $FILE
+fi
+output=$(cat $FILE)
+
+[[ "${output// }" ]] && echo "#[fg=colour15,bg=colour88,bold] $output"
