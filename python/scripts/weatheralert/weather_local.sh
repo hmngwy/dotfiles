@@ -4,4 +4,4 @@ if [ ! -f $FILE ] || test "`find $FILE -mmin +5`"; then
 fi
 output=$(cat $FILE)
 
-[[ "${output// }" ]] && echo "#[fg=colour15,bg=colour88,bold] $output"
+#[[ "${output// }" ]] && echo "#[fg=colour15,bg=colour88,bold] $output"
