@@ -4,7 +4,6 @@
 import requests
 import json
 import sys
-import time
 
 API_KEY = '0a6a8952082439b11cdbcd59bffcdb0a'
 LONG_LAT = sys.argv[1]
@@ -23,24 +22,22 @@ if forecast_raw.status_code == 200:
         if count % 4 == 0:
             report += '#[bg=colour235] '
         count += 1
-        evt_time = time.strftime(
-            '%Y-%m-%d %H:%M:%S', time.localtime(hda['time']))
-        # if sys.argv[1]:
-        #    print(evt_time)
         if hda['summary'] == 'Sunny':
             report += '#[bg=colour251] '
         if hda['summary'] == 'Partly Cloudy':
-            report += '#[bg=colour245] '
+            report += '#[bg=colour246] '
+        if hda['summary'] == 'Mostly Cloudy':
+            report += '#[bg=colour242] '  # 242
         if hda['summary'] == 'Overcast':
-            report += '#[bg=colour239] '
+            report += '#[bg=colour237] '  # 237
         if hda['summary'] == 'Drizzle':
-            report += '#[bg=colour24] '
+            report += '#[bg=colour32] '
         if hda['summary'] == 'Light Rain':
             report += '#[bg=colour25] '
         if hda['summary'] == 'Rain':
-            report += '#[bg=colour26] '
+            report += '#[bg=colour20] '
         if hda['summary'] == 'Heavy Rain':
-            report += '#[bg=colour27] '
+            report += '#[bg=colour18] '
     print(report)
 else:
     print(forecast_raw.status_code)
