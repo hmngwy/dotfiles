@@ -7,9 +7,10 @@ import sys
 import time
 
 API_KEY = '0a6a8952082439b11cdbcd59bffcdb0a'
+LONG_LAT = sys.argv[1]
 
 forecast_raw = requests.get(
-    'https://api.darksky.net/forecast/' + API_KEY + '/14.5833,120.9667?exclude=currently')
+    'https://api.darksky.net/forecast/' + API_KEY + '/' + LONG_LAT + '?exclude=currently')
 
 report = ''
 show = 12
@@ -26,18 +27,20 @@ if forecast_raw.status_code == 200:
             '%Y-%m-%d %H:%M:%S', time.localtime(hda['time']))
         # if sys.argv[1]:
         #    print(evt_time)
+        if hda['summary'] == 'Sunny':
+            report += '#[bg=colour251] '
         if hda['summary'] == 'Partly Cloudy':
             report += '#[bg=colour245] '
         if hda['summary'] == 'Overcast':
             report += '#[bg=colour239] '
         if hda['summary'] == 'Drizzle':
-            report += '#[bg=colour33] '
+            report += '#[bg=colour24] '
         if hda['summary'] == 'Light Rain':
-            report += '#[bg=colour31] '
-        if hda['summary'] == 'Rain':
             report += '#[bg=colour25] '
+        if hda['summary'] == 'Rain':
+            report += '#[bg=colour26] '
         if hda['summary'] == 'Heavy Rain':
-            report += '#[bg=colour19] '
+            report += '#[bg=colour27] '
     print(report)
 else:
     print(forecast_raw.status_code)
