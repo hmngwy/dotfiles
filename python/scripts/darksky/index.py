@@ -22,21 +22,21 @@ if forecast_raw.status_code == 200:
         if count % 4 == 0:
             report += '#[bg=colour235] '
         count += 1
-        if hda['summary'] == 'Sunny':
+        if 'Sunny' in hda['summary']:
             report += '#[bg=colour251] '
-        if hda['summary'] == 'Partly Cloudy':
+        if 'Partly Cloudy' in hda['summary']:
             report += '#[bg=colour246] '
-        if hda['summary'] == 'Mostly Cloudy':
+        if 'Mostly Cloudy' in hda['summary']:
             report += '#[bg=colour242] '  # 242
-        if hda['summary'] == 'Overcast':
+        if 'Overcast' in hda['summary']:
             report += '#[bg=colour237] '  # 237
-        if hda['summary'] == 'Drizzle':
+        if 'Drizzle' in hda['summary']:
             report += '#[bg=colour32] '
-        if hda['summary'] == 'Light Rain':
+        if 'Light Rain' in hda['summary']:
             report += '#[bg=colour25] '
-        if hda['summary'] == 'Rain':
+        if 'Rain' in hda['summary']:
             report += '#[bg=colour20] '
-        if hda['summary'] == 'Heavy Rain':
+        if 'Heavy Rain' in hda['summary']:
             report += '#[bg=colour18] '
     print(report)
 else:
