@@ -8,7 +8,7 @@ BULLETTRAIN_VIRTUALENV_PREFIX=''
 _seg_venv() {
   local virtualenv_path="$VIRTUAL_ENV"
   if [[ -n $virtualenv_path && -n $VIRTUAL_ENV_DISABLE_PROMPT ]]; then
-    prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG $1"$(basename $(pwd))"
+    prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG $1"$(basename $VIRTUAL_ENV  | cut -d- -f1)"
   elif which pyenv &> /dev/null; then
     prompt_segment $BULLETTRAIN_VIRTUALENV_BG $BULLETTRAIN_VIRTUALENV_FG $1"$(pyenv version | sed -e 's/ (set.*$//' | tr '\n' ' ' | sed 's/.$//')"
   fi
