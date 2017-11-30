@@ -23,3 +23,5 @@ alias cat=ccat
 alias h='howdoi -n 3'
 alias gs=gst
 alias l='ls -la'
+alias pg-start="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
+alias pg-stop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist"
