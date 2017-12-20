@@ -1,5 +1,3 @@
-setopt no_complete_aliases
-
 gpip(){
    PIP_REQUIRE_VIRTUALENV="" pip2 "$@"
 }

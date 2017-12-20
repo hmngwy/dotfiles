@@ -1,8 +1,6 @@
-consrc () {
-  [[ -f "$1" ]] && source "$1"
-}
+consrc $DFL/env  # Load local env file
 
-consrc $DFL/env
+setopt no_complete_aliases
 
 # Load ZPLUG
 source $ZPLUG_HOME/init.zsh

@@ -2,6 +2,7 @@
 export DF=$HOME/.dotfiles
 export DFL=$HOME/.dotfiles_local
 
+export FUNCTIONS_HOME=$DF/zsh/functions
 export AUTOLOAD_HOME=$DF/zsh/autoload
 
 # TMUX Plugin config
@@ -24,3 +25,10 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 # ZPLUG Home
 export ZPLUG_HOME=$DF/zplug
+
+# Load all files from .shell/zshrc.d directory
+if [ -d $FUNCTIONS_HOME ]; then
+  for file in $FUNCTIONS_HOME/*; do
+    source $file
+  done
+fi
