@@ -22,7 +22,7 @@ zplug "caiogondim/bullet-train.zsh", from:github, as:theme
 # Local plugins
 zplug "$DF/zsh/plugins/key-bindings", from:local
 zplug "$DF/zsh/plugins/fzf-zsh", from:local
-zplug "$DF/zsh/plugins/tmux-autoworkon", from:local
+#zplug "$DF/zsh/plugins/tmux-autoworkon", from:local
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
