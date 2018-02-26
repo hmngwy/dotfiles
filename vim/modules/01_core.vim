@@ -1,7 +1,7 @@
 " Color Scheme
 syntax enable
 set background=dark
-colorscheme solarized 
+colorscheme solarized
 let g:solarized_termcolors=16
 
 " Backspace is managed by vim-sensible, but I need it here too because some
@@ -42,3 +42,5 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+
+set relativenumber

@@ -22,3 +22,4 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'diepm/vim-rest-console'

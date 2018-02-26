@@ -8,7 +8,6 @@ source $ZPLUG_HOME/init.zsh
 zplug "plugins/virtualenv", from:oh-my-zsh
 zplug "plugins/tmux", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/git-flow-avh", from:oh-my-zsh
 zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 zplug "lib/history", from:oh-my-zsh
 
@@ -51,3 +50,10 @@ consrc $DFL/zshrc
 consrc $DFL/zsh_aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/hashbang/Projects/lambda-functions/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/hashbang/Projects/lambda-functions/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/hashbang/Projects/lambda-functions/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/hashbang/Projects/lambda-functions/node_modules/tabtab/.completions/sls.zsh
