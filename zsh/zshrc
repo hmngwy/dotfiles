@@ -34,6 +34,7 @@ fi
 # Start loading plugins
 zplug load
 
+fpath=(/usr/local/share/zsh/site-functions $fpath)
 autoload -U compinit && compinit
 
 # Load all files from .shell/zshrc.d directory
