@@ -9,3 +9,4 @@ alias cat=ccat
 alias h='howdoi -n 3'
 alias l='ls -la'
 alias mkpassword='openssl rand -base64 12'
+alias pvim='pipenv run nvim'
