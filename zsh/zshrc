@@ -20,7 +20,8 @@ zplug "zsh-users/zsh-completions", from:github
 zplug "zsh-users/zsh-syntax-highlighting", from:github
 
 # Prompt theme
-zplug "caiogondim/bullet-train.zsh", from:github, as:theme
+setopt prompt_subst
+zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme, defer:3
 
 # Local plugins
 zplug "$DF/zsh/plugins/key-bindings", from:local
@@ -54,3 +55,11 @@ consrc $DFL/zshrc
 consrc $DFL/zsh_aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/hashbang/Projects/lambda-functions/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/hashbang/Projects/lambda-functions/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/hashbang/Projects/lambda-functions/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/hashbang/Projects/lambda-functions/node_modules/tabtab/.completions/sls.zsh
+
+eval "$(rbenv init -)"
