@@ -4,12 +4,6 @@ set timeoutlen=350
 " Set the local leader.
 let maplocalleader = "|"
 
-" Map `Escape` to ‘nothing’ in Normal, Visual, Select, Operator-pending modes
-noremap: <esc> <nop>
-
-" Map `Escape` to ‘nothing’ in Insert and Command modes
-noremap!: <esc> <nop>
-
 " My C-[
 inoremap \\ <esc>
 
