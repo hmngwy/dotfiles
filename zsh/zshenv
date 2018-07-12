@@ -20,4 +20,7 @@ export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=~/Projects
 
 # ZPLUG Home
-export ZPLUG_HOME=$DF/zplug
+export ZPLUG_HOME=$DF/zsh/zplug
+
+# Gitflow
+export FLAGS_GETOPT_CMD="$(brew --prefix gnu-getopt)/bin/getopt"

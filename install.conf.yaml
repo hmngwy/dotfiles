@@ -13,13 +13,6 @@
     ~/.tmux: tmux
     ~/.tmux.conf: tmux/tmux.conf
     ~/.vim: vim
-    ~/.virtualenvs/postactivate:
-      create: true
-      path: python/venv/postactivate
-    ~/.virtualenvs/postdeactivate:
-      create: true
-      path: python/venv/postdeactivate
-    ~/.gitflow_export: gitflow_export
     ~/.zshrc: zsh/zshrc
     ~/.zprofile: zsh/zshenv
     ~/.zshenv: zsh/zshenv
