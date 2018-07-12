@@ -13,7 +13,7 @@ set number
 
 " Enable invisible characters.
 "set list
-"set listchars=eol:↲
+"set listchars=space:-
 
 " More natural splitting.
 set splitbelow
@@ -37,10 +37,5 @@ set sessionoptions=blank,curdir,folds,help,tabpages,winsize
 " Enable Tree Style Layout for netrw
 let g:netrw_liststyle=3
 
-" Set a default indent, but vim-sleuth should adjust it.
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-
+" Relative line numbers
 set relativenumber

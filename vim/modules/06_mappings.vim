@@ -1,7 +1,19 @@
+" Change global timeout
+set timeoutlen=350
+
 " Set the local leader.
 let maplocalleader = "|"
 
-" Quick save 
+" Map `Escape` to ‘nothing’ in Normal, Visual, Select, Operator-pending modes
+noremap: <esc> <nop>
+
+" Map `Escape` to ‘nothing’ in Insert and Command modes
+noremap!: <esc> <nop>
+
+" My C-[
+inoremap \\ <esc>
+
+" Quick save
 nnoremap <silent> <leader><leader> :w<CR>
 
 " Clears the search.
@@ -49,9 +61,6 @@ nnoremap <silent> <leader>wf :tab sp<CR>
 " Pull from either side of a git conflict.
 nnoremap <silent> <leader>gl :diffget LOCAL<CR>
 nnoremap <silent> <leader>gr :diffget REMOTE<CR>
-
-" Easy escape.
-inoremap jk <esc>
 
 " Quick session bindings.
 nnoremap <silent> <leader>sw :mksession! .quicksave.vim<CR>:echo "Session saved."<CR>
