@@ -1405,6 +1405,8 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 8</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -1446,7 +1448,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>834 110 540 340 0 0 1440 900 </string>
+	<string>334 362 768 206 0 0 1440 900 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>412 545 616 174 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
@@ -1454,7 +1456,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>379 210 796 473 0 0 1440 900 </string>
+	<string>314 373 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>39 272 970 477 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1491,12 +1493,16 @@
 			</dict>
 			<key>Ansi 1 Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.14145714044570923</real>
+				<real>0.15371507173404098</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.10840655118227005</real>
+				<real>0.15371507173404098</real>
 				<key>Red Component</key>
-				<real>0.81926977634429932</real>
+				<real>0.589080810546875</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
@@ -2063,7 +2069,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MesloLGMForPowerline-Regular 13</string>
+			<string>DejaVuSansMonoPowerline 13</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2231,7 +2237,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>0.95176143603152541</real>
+			<real>1.0033767884036144</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -3092,7 +3098,7 @@
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
-	<false/>
+	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
 	<key>RightCommand</key>
@@ -3110,7 +3116,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-08-15T07:27:42Z</date>
+	<date>2018-08-23T04:05:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -3129,6 +3135,8 @@
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
 	<integer>6</integer>
+	<key>TabStyle</key>
+	<integer>1</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>ThreeFingerEmulates</key>
@@ -3170,5 +3178,9 @@
 	<false/>
 	<key>iTerm Version</key>
 	<string>3.1.6</string>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>
