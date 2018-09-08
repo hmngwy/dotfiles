@@ -8,6 +8,6 @@ alias vim=nvim
 alias cat=ccat
 alias h='howdoi -n 3'
 alias l='ls -la'
-alias mkpassword='openssl rand -base64 12'
+alias mkpassword="python -c 'import sys,uuid; sys.stdout.write(uuid.uuid4().hex)' | pbcopy && pbpaste && echo"
 alias pvim='pipenv run nvim'
 alias serve='python3 -m http.server'
