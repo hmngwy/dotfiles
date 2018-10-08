@@ -23,4 +23,4 @@ export PROJECT_HOME=~/Projects
 export ZPLUG_HOME=$DF/zsh/zplug
 
 # Gitflow
-export FLAGS_GETOPT_CMD="$(brew --prefix gnu-getopt)/bin/getopt"
+export FLAGS_GETOPT_CMD="/usr/bin/getopt"
