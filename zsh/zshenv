@@ -2,6 +2,8 @@
 export DF=$HOME/.dotfiles
 export DFL=$HOME/.dotfiles_local
 
+source $DFL/env
+
 export AUTOLOAD_HOME=$DF/zsh/autoload
 
 # TMUX Plugin config
