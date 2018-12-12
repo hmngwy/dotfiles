@@ -3,7 +3,6 @@
 " " So configuration for tmux.vim would go in modules/plugins/tmux.vim.vim
 
 Plug 'sbdchd/neoformat'
-Plug 'tomasr/molokai'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
