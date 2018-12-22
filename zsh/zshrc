@@ -53,3 +53,4 @@ consrc "/usr/local/bin/virtualenvwrapper.sh"
 
 consrc $DFL/zshrc
 consrc $DFL/zsh_aliases
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

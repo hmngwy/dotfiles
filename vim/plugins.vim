@@ -17,3 +17,5 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'w0rp/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-sleuth'
