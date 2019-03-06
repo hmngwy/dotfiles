@@ -56,3 +56,7 @@ consrc "/usr/local/bin/virtualenvwrapper.sh"
 consrc $DFL/zshrc
 consrc $DFL/zsh_aliases
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="/Users/hashbang/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
