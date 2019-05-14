@@ -1,3 +1,5 @@
+map <space> <Plug>(easymotion-bd-w)
+
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
