@@ -28,14 +28,6 @@ if ! grep -Fxq "$(which zsh)" /etc/shells; then
   sudo sh -c 'echo "$(which zsh)" >> /etc/shells';
 fi
 
-# user brew python in global
-if [ ! -f "/usr/local/bin/python" ]; then
-  ln -s $(which python2) /usr/local/bin/python
-fi
-
-# install python venv tools
-PIP_REQUIRE_VIRTUALENV="" pip2 install virtualenv virtualenvwrapper vex
-
 # change user shell
 if [ $(finger $LOGNAME | grep Shell | cut -d: -f3) == *"$(which zsh)"* ]; then
   chsh -s $(which zsh)
