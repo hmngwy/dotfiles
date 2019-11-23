@@ -26,3 +26,8 @@ export ZPLUG_HOME=$DF/zsh/zplug
 
 # Gitflow
 export FLAGS_GETOPT_CMD="/usr/bin/getopt"
+
+export PATH="$PATH:/Users/hashbang/.pyenv/bin"
+if [ -z "$VIRTUAL_ENV" ]; then
+    eval "$(pyenv init -)"
+fi
