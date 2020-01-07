@@ -17,3 +17,13 @@ tmux source-file ~/.tmux.conf
 
 # Install vim plugins
 nvim -u $HOME/.dotfiles/vim/init.vim +PlugClean +PlugInstall +PlugUpdate +qall
+
+# Install pyenv Python Versions
+pyenv install 3.6.9
+pyenv global 3.6.9
+
+
+reload
+
+# Install AWS CLI
+pip3 install 3.6.9

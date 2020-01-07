@@ -16,6 +16,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'w0rp/ale'
 Plug '~/.fzf'
+Plug '~/.fzf/plugin/fzf'
+Plug 'ycm-core/YouCompleteMe/', { 'do': 'python3 ./install.py' }
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-sleuth'
 Plug 'easymotion/vim-easymotion'

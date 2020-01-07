@@ -53,3 +53,9 @@ fi
 consrc $DFL/zshrc
 consrc $DFL/zsh_aliases
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

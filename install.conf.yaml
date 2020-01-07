@@ -17,6 +17,7 @@
     ~/.zprofile: zsh/zshenv
     ~/.zshenv: zsh/zshenv
     ~/.fzf: fzf
+    ~/.alacritty.yml: alacritty.yml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
